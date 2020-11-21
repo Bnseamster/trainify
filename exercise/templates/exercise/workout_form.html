@@ -1,0 +1,61 @@
+{% extends "exercise/layout.html" %}
+
+{% block body %}
+<title>Generate Random Exercise</title>
+<section class="projects-section bg-light" id="register">
+    <form action= "" method="POST" id='generate-exercise' onsubmit="return false;">
+        {% csrf_token %}
+        <div class="btn-group btn-group-toggle col-md-3" data-toggle="buttons">
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Home Workout
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off"> Gym Workout
+            </label>
+        </div>
+        <div class="form-group col-md-3">
+          <label for="muscle-groups">Muscle Group</label>
+          <select name="muscle-groups" class="form-control"  id="muscle-groups">
+            <option name='muscle-group'>Upper Body</option>
+            <option name='muscle-group'>Lower Body</option>
+            <option name='muscle-group'>Chest</option>
+            <option name='muscle-group'>Back</option>
+            <option name='muscle-group'>Legs</option>
+            <option name='muscle-group'>Core</option>
+            <option name='muscle-group'>Arms</option>
+            <option name='muscle-group'>Cardio</option>
+          </select>
+        </div>
+        <div class="form-group col-md-3">
+            <label for="duration">Desired Duration (in minutes)</label>
+            <input name= "duration" type="number" class="form-control"  id="duration">
+        </div>
+        <button id="generate-workout-button" type="submit" class="btn btn-secondary btn-lg btn-block col-md-3">Generate Workout!</button>
+    </form>
+</section>
+<section class="projects-section bg-light" id="selected-exercises" style="padding-top:0%; padding-bottom: 0%;">
+
+</section>
+<section id="after-workout-options" style="display:none;">
+    <form action= "{% url 'start-workout' %}" method='POST'>
+        {% csrf_token %}
+        <input type= "hidden" id='workout-set'name='workout-set'>
+        <button type="submit" class="btn btn-secondary btn-lg btn-block col-md-3">  Start Workout</button>
+    </form>
+    <span class= "d-flex justify-content-center" id='save'><button type="button" class="btn btn-secondary btn-circle btn-sm" data-toggle="collapse" data-target="#name-workout">+</button><p>  Save Workout</p></span>
+    <div class="collapse" id="name-workout">
+        <ul class="navbar-nav">
+              <li class="nav-item">
+                  <form id="name-workout-form" onsubmit="return false;" >
+                      {% csrf_token%}
+                          <div class="form-group" >
+                            <label for="exampleFormControlTextarea1">Workout Name</label>
+                            <input id="workout-name-input"class="form-control" type="text" placeholder="Workout name">
+                          </div>
+                      <input id="name-workout-button" name="name" type="submit" class="btn btn-primary col-md-3" value="Save">
+                  </form>
+              </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

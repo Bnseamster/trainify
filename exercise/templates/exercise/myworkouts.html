@@ -1,0 +1,14 @@
+{% extends "exercise/layout.html" %}
+{% load static %}
+{% block body %}
+<section class="projects-section bg-light" id="register">
+    <h2>{{ user.get_username }}'s Workouts</h2>
+    <br>
+    <div id= "my-workouts-container" class="card-deck">
+    
+    </div>
+</section>
+<script src='{% static "exercise/js/myworkouts.js" %}'></script>
+
+{% endblock %}
+

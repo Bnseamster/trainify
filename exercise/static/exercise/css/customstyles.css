@@ -1,0 +1,373 @@
+#like-button{
+    padding:2% !important;
+}
+#mainNav .navbar-toggler {
+    font-size: 80%;
+    padding: 0.75rem;
+    color: #8a8a8a;
+    border: 1px solid #8a8a8a;
+}
+
+/* Styling section for the exercise tile cards*/
+.col-md-3 {
+    max-width: 100%;
+}
+
+.card-img, .card-img-top, .card-img-bottom {
+    flex-shrink: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: 100% 34%;
+    height: 150px;
+}
+.card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+
+.btn-circle.btn-sm { 
+    width: 30px; 
+    height: 30px; 
+    padding: 0px 0px; 
+    border-radius: 15px; 
+    font-size: 8px; 
+    text-align: center;
+} 
+.btn-circle.btn-md { 
+    width: 50px; 
+    height: 50px; 
+    padding: 7px 10px; 
+    border-radius: 25px; 
+    font-size: 10px; 
+    text-align: center; 
+} 
+.btn-circle.btn-xl { 
+    width: 70px; 
+    height: 70px; 
+    padding: 10px 16px; 
+    border-radius: 35px; 
+    font-size: 12px; 
+    text-align: center; 
+}
+
+/* Styling for the save button */
+#save{
+    display: inline;
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+}
+
+/* Styling for save button after workout is generated */
+#after-workout-options{
+    padding-bottom: 10%;
+}
+
+/* Styling for the heading that shows the current exercise and set number */
+#current-exercise-top{
+    display:none; 
+    text-align: center; 
+    padding-bottom: 0%;
+    padding-top: 10%
+}
+
+/* Styling for the rest notificaiton */
+#rest-notification{
+    display:none;
+    width:100%;
+    position: absolute;
+    color: red;
+    text-align: center;
+    padding-top: 10%;
+    
+}
+
+/* Styling for the 'done' notification at the end of the workout */
+#done{
+    display:none;
+    width:100%;
+    position: relative;
+    color: green;
+    text-align: center;
+    padding: 10%;
+    
+}
+
+#circle-timer{
+    padding-top: 10%;
+    padding-bottom: 15%;
+}
+
+/* centers the countdout timer at the beginning of the workout */
+.base-timer {
+    margin: auto;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    position: relative;
+  }
+  
+/* Removes SVG styling that would hide the time label */
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+/* The SVG path that displays the timer's progress */
+.base-timer__path-elapsed {
+  stroke-width: 3px;
+  stroke: grey;
+}
+
+.base-timer__label {
+    position: absolute;
+    
+    /* Size should match the parent container */
+    width: 300px;
+    height: 300px;
+    
+    /* Keep the label aligned to the top */
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* Create a flexible box that centers content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* Sort of an arbitrary number; adjust to your liking */
+    font-size: 40px;
+}
+
+
+.base-timer__path-remaining {
+    /* Just as thick as the original ring */
+    stroke-width: 3px;
+  
+    /* Rounds the line endings to create a seamless circle */
+    stroke-linecap: round;
+  
+    /* Makes sure the animation starts at the top of the circle */
+    transform: rotate(90deg);
+    transform-origin: center;
+  
+    /* One second aligns with the speed of the countdown timer */
+    transition: 100ms ease all;
+  
+    /* Allows the ring to change color when the color value updates */
+    stroke: currentColor;
+}
+  
+.base-timer__svg {
+    /* Flips the svg and makes the animation to move left-to-right */
+    transform: scaleX(-1);
+ }
+.base-timer__path-remaining.green {
+    color: rgb(65, 184, 131);
+    
+}
+  
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+  
+.base-timer__path-remaining.red {
+    color: red;
+}
+
+.pause-button {
+    position: absolute;
+    
+}
+#btnStart, #btnStop {
+    border: none;
+    padding: 0;
+    background: none;
+    color: rgb(102, 102, 102);
+}
+/*
+#exercise-tile{
+    animation: 1.0s ease-out 0s 1 slideInFromLeft;
+}*/
+
+.counter {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.counter.hide {
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide 1s ease-out;
+}
+@keyframes hide {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+}
+
+.final {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+.final.show {
+    transform: translate(-50%, -50%) scale(1);
+    animation: show .3s ease-in;
+}
+.final.hide{
+    transform: translate(-50%, -50%) scale(0);
+    animation: hide .2s ease-out;
+}
+.final.start{
+    animation: start .2s ease-out;
+}
+
+@keyframes show {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    80% {
+        transform: translate(-50%, -50%) scale(1.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.nums {
+    color: #3498db;
+    position: relative;
+    font-size: 50px;
+    overflow: hidden;
+    width: 250px;
+    height: 50px;
+}
+.nums span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(120deg);
+    transform-origin: bottom center;
+}
+.nums span.in {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: goIn .5s ease-in-out;
+}
+.nums span.out {
+    animation: goOut .5s ease-in-out;
+}
+@keyframes goIn {
+    0% {
+        transform: translate(-50%, -50%) rotate(120deg);
+    }
+    30% {
+        transform: translate(-50%, -50%) rotate(-20deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(10deg);
+    }
+
+    90%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+}
+@keyframes goOut {
+    0%, 30% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    60% {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-120deg);
+    }
+}
+
+h4 {
+    font-size: 20px;
+    margin: 5px;
+    text-transform: uppercase;
+}
+
+
+.carousel {
+    position: relative;
+    display: block; 
+    box-sizing: border-box; 
+    position: relative;
+}
+
+.video-fluid{
+    width:100%;
+    
+}
+
+.iframe{
+    border: 0;
+}
+
+#video {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	height: 0;
+}
+#video iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#body-container {
+    padding-top: 10%;
+}
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;        
+}
+
+
+/*CSS for share page*/
+#category-selection-form{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+/*CSS for my_workouts page*/
+
+.card-deck{
+    margin-left: 2%;
+    margin-right:2%;
+}
+
+#name-workout-form{
+    padding-left: 3%;
+    padding-right: 3%;
+}

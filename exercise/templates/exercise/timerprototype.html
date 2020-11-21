@@ -1,0 +1,110 @@
+{% extends "exercise/layout.html" %}
+{% load static %}
+{% block body %}
+<div class="projects-section bg-light" style='display: none'>
+    <input type="hidden" id="start"/><br/>
+    <input type="hidden" id="stop"/><br/>
+    <input type="hidden" id="diff"/><br/>
+
+
+
+<div id="app" class="app">
+    <div class="base-timer">
+        <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <g class="base-timer__circle">
+            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+            <path
+              id="base-timer-path-remaining"
+              stroke-dasharray="283"
+              class="base-timer__path-remaining green"
+              d="
+                M 50, 50
+                m -45, 0
+                a 45,45 0 1,0 90,0
+                a 45,45 0 1,0 -90,0
+              "
+            ></path>
+          </g>
+        </svg>
+        <span id="base-timer-label" class="base-timer__label">
+            <div id='time-display'>
+
+            </div>
+            <br>
+            <div id="pause-button" style="position: absolute; top:60%">
+                <button id="btnStart" type="button"  style="display: none;">
+                    <i class="fa fa-play"></i>
+                </button>
+                <button id="btnStop" type="button">
+                    <i class="fa fa-pause"></i>
+                </button>
+            </div>
+
+        </span>
+      </div>
+</div>
+</div>
+
+<div class="counter">
+	<div class="nums">
+		<span class="in">3</span>
+		<span>2</span>
+		<span>1</span>
+		<span>0</span>
+	</div>
+	<h4>Get Ready</h4>
+</div>
+<div class="final">
+	<h1>GO</h1>
+	<button id="replay">replay</button>
+</div>
+<footer>
+	<p>Created with <i class="fa fa-heart"></i> by <a target="_blank" href="https://florin-pop.com">Florin Pop</a></p>
+</footer>
+
+<script>
+    const nums = document.querySelectorAll('.nums span');
+    const counter = document.querySelector('.counter');
+    const finalMessage = document.querySelector('.final');
+    const repl = document.getElementById('replay');
+
+    runAnimation();
+
+    function resetDOM() {
+    	counter.classList.remove('hide');
+    	finalMessage.classList.remove('show');
+
+    	nums.forEach(num => {
+    		num.classList.value = '';
+    	});
+
+        nums[0].classList.add('in');
+    }
+
+    function runAnimation() {
+    	nums.forEach((num, idx) => {
+    		const penultimate = nums.length - 1;
+    		num.addEventListener('animationend', (e) => {
+    			if(e.animationName === 'goIn' && idx !== penultimate){
+    				num.classList.remove('in');
+    				num.classList.add('out');
+    			} else if (e.animationName === 'goOut' && num.nextElementSibling){
+    				num.nextElementSibling.classList.add('in');
+    			} else {
+    				counter.classList.add('hide');
+    				finalMessage.classList.add('show');
+    			}
+    		});
+    	});
+    }
+
+    repl.addEventListener('click', () => {
+    	resetDOM();
+    	runAnimation();
+    });
+
+
+
+</script>
+
+{% endblock %}
