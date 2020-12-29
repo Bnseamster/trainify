@@ -1,4 +1,4 @@
-# Welcome to My Capstone Project: Fitness
+# Welcome to My Project: Fitness
 
 ### Description:
 Hello, my capstone project, Trainify, is a web app that allows people to
