@@ -1,4 +1,4 @@
-# Welcome to My Capstone Project: Fitness
+# Welcome to My Project: Fitness
 
 ### Description:
 Hello, my capstone project, Trainify, is a web app that allows people to
@@ -15,5 +15,3 @@ is mobile responsive!
 
 ### Back End:
 >Using Django with python I was able to easily create a backend thatworked for my project. The models function of Django allowed me toeasily create entries in any of my six database tables/models andsort through them in order to send information to the frontend.
-
-I believe that my application thouroughly utilizes all of the main principals and knowledge used in the CS50 web course. Futhermore, it meets the rigor required for a final project for it heavy use of javascript, django, HTML, and CSS as evidinced by the desriptions above and my video submission of the project.
