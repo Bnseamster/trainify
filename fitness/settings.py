@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'fitness.urls'
@@ -127,3 +128,5 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static")
     )
 #'C:/Users/Brand/OneDrive/Documents/Py Projects/CS 50 Web Dev/2020/fitness/exercise/static',
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
