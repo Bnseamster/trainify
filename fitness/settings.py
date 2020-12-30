@@ -25,7 +25,7 @@ SECRET_KEY = 'mflixuva%1d8!#47ev*&)tnv@=ie^1m2c%*r)y9id0zgi*r%ye'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://trainify.herokuapp.com']
+ALLOWED_HOSTS = ['trainify.herokuapp.com']
 
 
 # Application definition
