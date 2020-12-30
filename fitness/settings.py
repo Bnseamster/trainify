@@ -125,4 +125,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     'C:/Users/Brand/OneDrive/Documents/Py Projects/CS 50 Web Dev/2020/fitness/exercise/static',
+    os.path.join(BASE_DIR, "static")
     )
