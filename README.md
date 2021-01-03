@@ -14,5 +14,5 @@ is mobile responsive!
 >This project heavily relies on javascript for the functionality of the program. Not only does the javascript of this project handle DOM manipulation to make the page responsive, but it also utilizes AJAX calls so that the user is not constantly having to reload the page and handles the logic of the (extremely complicated for me) circle coutdown timer functionality. This includes the pause and play functionallity, counting down, reseting once the timer is at 0, counting the exercise sets and notifying the user when the timer is completely done. Many of the animations are handled by CSS keyframes.
 
 ### Back End:
->Using Django with python I was able to easily create a backend thatworked for my project. The models function of Django allowed me toeasily create entries in any of my six database tables/models andsort through them in order to send information to the frontend.
+>Using Django with python I was able to easily create a backend that worked for my project. The models function of Django allowed me to easily create entries in any of my six database tables/models andsort through them in order to send information to the frontend.
 
