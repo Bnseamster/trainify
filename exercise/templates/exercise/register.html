@@ -2,7 +2,7 @@
 
 {% block body %}
 
-<section class="projects-section bg-light" id="register">
+<section class="projects-section bg-light" id="register" style="flex: 1 0 auto;">
     <style>
         #mainNav .navbar-brand {
             padding: 0.5rem 0;
@@ -21,7 +21,7 @@
             <div>{{ message }}</div>
         {% endif %}
     
-        <form action="{% url 'register' %}" method="post">
+        <form action="{% url 'register' %}" method="post" class='register-login'>
             {% csrf_token %}
             <div class="form-group">
                 <input class="form-control" type="email" name="email" placeholder="Email Address">

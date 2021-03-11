@@ -19,6 +19,12 @@ body{
     border: 1px solid #8a8a8a;
 }
 
+/* Login/Register Page CSS */
+
+.register-login{
+    max-width: 500px; 
+}
+
 /* Styling section for the exercise tile cards*/
 .col-md-3 {
     max-width: 100%;
