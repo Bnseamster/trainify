@@ -55,7 +55,7 @@ function setCurrentWorkout(currentWorkout, workoutName){
     localStorage.setItem('workoutName', workoutName);
     localStorage.setItem('workoutLikes', currentWorkout.likes);
     localStorage.setItem('currentWorkoutId', currentWorkout.id);
-    window.location.replace("http://127.0.0.1:8000/workout_preview");            
+    window.location.href("/workout_preview");            
     
    
 }
